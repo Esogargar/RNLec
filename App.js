@@ -2,87 +2,64 @@ import React from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 
 // Class Component:
-class App extends React.Component {
+export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.Container}>
-        <View style={styles.View1}>
-          <Text> Hello There</Text>
-        </View>
-        <View style={styles.View2}>
-          <Text> Welcom</Text>
+      // Try setting `alignItems` to 'flex-start', 'flex-end', 'center', 'stretch'
+      <View style={styles.container}>
+        <Text style={styles.headerStyle}> Position Flex</Text>
+        <View style={styles.elementsContainer}>
+          <View style={styles.red}>
+            <View style={styles.green} />
+            <View style={styles.gray} />
+          </View>
+          <View style={styles.yellow} />
         </View>
       </View>
     );
   }
 }
 
-export default App;
-
 const styles = StyleSheet.create({
-  Container: {
-    flex: 1,
-    height: 650,
-    flexDirection: 'row',
-    backgroundColor: '#20975764',
-    // justifyContent: 'center',
-    // alignItems: 'center',
-  },
-  View1: {
-    backgroundColor: 'green',
-    margin: 1,
+  green: {
+    backgroundColor: '#32B76C',
+    height: '100%',
     flex: 1,
   },
-  View2: {
-    backgroundColor: 'red',
-    flexDirection: 'row',
-    flex: 0.5,
+  gray: {
+    backgroundColor: 'gray',
+    height: '100%',
+    flex: 3,
   },
-  Text: {
-    color: '#209',
+  yellow: {
+    flex: 1,
+    backgroundColor: '#FAA030',
+    height: '100%',
+  },
+  red: {
+    flex: 2,
+    backgroundColor: '#EE2C38',
+    height: '100%',
+  },
+  container: {
+    marginTop: 48,
+    flex: 1,
+    flexDirection: 'column',
+  },
+  headerStyle: {
+    fontSize: 24,
+    textAlign: 'center',
+    fontWeight: '300',
+    marginBottom: 24,
+  },
+  elementsContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'stretch',
+    backgroundColor: '#ecf5fd',
+    height: 100,
+    marginLeft: 24,
+    marginRight: 24,
+    marginBottom: 24,
   },
 });
-
-/* <View style={styles.Container}>
-<Text style={styles.Text}> React Component </Text>
-<Text> React Component </Text>
-</View> */
-
-// Function Component :
-// import React from 'react';
-// import {Text, View} from 'react-native';
-
-// const App = () => {
-//   return <Text> Hello World </Text>;
-// };
-
-// export default App;
-
-// import React from 'react';
-// import {StyleSheet, View, Text} from 'react-native';
-
-// class App extends React.Component {
-//   render() {
-//     return (
-//       <View style={styles.Container}>
-//         <Text style={styles.textStyle}>I am using React Native</Text>
-//       </View>
-//     );
-//   }
-// }
-
-// const styles = StyleSheet.create({
-//   Container: {
-//     flex: 1,
-//     flexDirection: 'column',
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//   },
-//   textStyle: {
-//     fontSize: 18,
-//     fontWeight: '700',
-//     color: 'blue',
-//   },
-// });
-
-// export default App;
